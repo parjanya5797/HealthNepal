@@ -29,7 +29,7 @@ public class SplashActivity extends AppCompatActivity {
                     }
                 }
             };
-            timer.run();
+            timer.start();
 
         }
 
