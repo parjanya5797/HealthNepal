@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:padding="100dp"
+tools:context=".MainActivity">
+
+<TextView
+    android:id="@+id/tv1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Health Nepal Login"
+    android:layout_margin="15dp"
+    android:textColor="#ff1414"
+    android:textSize="20sp"
+    android:textStyle="bold"
+    />
+
+<LinearLayout
+    android:layout_width="400dp"
+    android:layout_height="300dp"
+    android:layout_below="@id/tv1"
+    android:orientation="vertical"
+    android:background="#0182dd"
+    android:gravity="center"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text=""
+        android:id="@+id/textViewMessage"
+        android:layout_marginTop="2dp"
+        android:layout_below="@+id/sendButton"
+        android:textColor="#ff1414"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:id="@+id/edit1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        />
+    <EditText
+        android:id="@+id/edit2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:hint="Password"
+        />
+
+    <EditText
+        android:id="@+id/edit3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:hint="Confirm Password"
+        />
+
+    <EditText
+        android:id="@+id/edit4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text|number"
+        android:hint="Phone Number"
+        />
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:text="SIGN UP"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        />
+</LinearLayout>
+</RelativeLayout>
+
+
+
+
