@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">HealthNepal</string>
+    <string name="register_title">Register To Health Nepal</string>
+    <string-array name="blood_group">
+        <item>A RhD positive (A+)</item>
+        <item>A RhD negative (A-)</item>
+        <item>B RhD positive (B+)</item>
+        <item> B RhD negative (B-)</item>
+        <item>O RhD positive (O+)</item>
+        <item>O RhD negative (O-)</item>
+        <item> AB RhD positive (AB+)</item>
+        <item>AB RhD negative (AB-)</item>
+    </string-array>
 </resources>
