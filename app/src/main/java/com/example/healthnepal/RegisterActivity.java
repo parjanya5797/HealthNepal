@@ -3,12 +3,34 @@ package com.example.healthnepal;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import android.widget.Toast;
 
-public class RegisterActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
+    String[] blood_group = {"A","A+","A-","B+","B-","O+","0-","AB+","AB-"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        Spinner spin = (Spinner) findViewById(R.id.blood_group);
+        spin.setOnItemSelectedListener(this);
+        ArrayAdapter spinBGroup = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,blood_group);
+        spinBGroup.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spin.setAdapter(spinBGroup);
+
+    }
+
+    //Performing action onItemSelected and onNothing selected
+    @Override
+    public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long id) {
+        Toast.makeText(getApplicationContext(),blood_group[position] , Toast.LENGTH_LONG).show();
+    }
+    @Override
+    public void onNothingSelected(AdapterView<?> arg0) {
+        // TODO Auto-generated method stub
     }
 }

@@ -20,4 +20,20 @@
         <item name="android:textSize">16sp</item>
     </style>
 
+    <style name="CardDesign">
+        <item name="android:textColor">#D15E5E</item>
+        <item name="android:textSize">40dp</item>
+        <item name="android:layout_marginStart">24dp</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_marginRight">24dp</item>
+        <item name="android:layout_marginBottom">24dp</item>
+        <item name="cardCornerRadius">20dp</item>
+        <item name="cardElevation">40dp</item>
+        <item name="cardBackgroundColor">#9A9797</item>
+    </style>
+    <style name="spinnerStyle">
+        <item name="android:background">#fff</item>
+
+    </style>
+
 </resources>

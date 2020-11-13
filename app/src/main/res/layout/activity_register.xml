@@ -4,83 +4,96 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+    tools:context=".RegisterActivity"
+    android:background="#9EA1A1"
+    >
 
     <TextView
         android:id="@+id/register_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginRight="18dp"
+        android:layout_marginTop="32dp"
         android:gravity="center_horizontal"
         android:text="@string/register_title"
         android:textSize="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:elevation="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="@+id/cardView"
+        app:layout_constraintStart_toStartOf="@+id/cardView"
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <EditText
-        android:id="@+id/full_name"
-        android:layout_width="0dp"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        style="@style/CardDesign"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:hint="Full Name"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="@+id/contact_no"
-        app:layout_constraintStart_toStartOf="@+id/contact_no"
-        app:layout_constraintTop_toBottomOf="@+id/register_1" />
-
-    <EditText
-        android:id="@+id/contact_no"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Contact Number "
-        android:inputType="numberSigned"
-        app:layout_constraintEnd_toEndOf="@+id/register_email"
-        app:layout_constraintStart_toStartOf="@+id/register_email"
-        app:layout_constraintTop_toBottomOf="@+id/full_name" />
-
-    <EditText
-        android:id="@+id/register_email"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Email Address"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="@+id/address"
-        app:layout_constraintStart_toStartOf="@+id/address"
-        app:layout_constraintTop_toBottomOf="@+id/contact_no" />
-
-    <EditText
-        android:id="@+id/address"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Address"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="@+id/age"
-        app:layout_constraintStart_toStartOf="@+id/age"
-        app:layout_constraintTop_toBottomOf="@+id/register_email" />
-
-    <EditText
-        android:id="@+id/age"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Age"
-        android:inputType="numberSigned"
-        app:layout_constraintEnd_toEndOf="@+id/blood_group"
-        app:layout_constraintStart_toStartOf="@+id/blood_group"
-        app:layout_constraintTop_toBottomOf="@+id/address" />
-
-    <Spinner
-        android:id="@+id/blood_group"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:hint="Blood Group"
-        android:inputType="text"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/age" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp"
+            >
+
+            <EditText
+                android:id="@+id/full_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:hint="Full Name"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/contact_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contact Number "
+                android:inputType="numberSigned" />
+
+            <EditText
+                android:id="@+id/register_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email Address"
+                android:inputType="textEmailAddress" />
+
+            <Spinner
+                android:id="@+id/blood_group"
+                style="@style/spinnerStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Blood Group"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Address"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Age"
+                android:inputType="numberSigned" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
