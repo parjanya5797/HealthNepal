@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HealthNepal</string>
+    <string name="app_name">Health Nepal</string>
     <string name="register_title">Register To Health Nepal</string>
     <string-array name="blood_group">
         <item>A RhD positive (A+)</item>
