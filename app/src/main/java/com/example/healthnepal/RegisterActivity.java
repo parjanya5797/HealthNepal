@@ -2,15 +2,17 @@ package com.example.healthnepal;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 public class RegisterActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-
+    Button login_button;
     String[] blood_group = {"A","A+","A-","B+","B-","O+","0-","AB+","AB-"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +23,15 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         ArrayAdapter spinBGroup = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,blood_group);
         spinBGroup.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin.setAdapter(spinBGroup);
+
+        login_button = (Button) findViewById(R.id.login_button1);
+        login_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

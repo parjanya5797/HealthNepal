@@ -4,19 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity"
-    android:background="#9EA1A1"
-    >
+    android:background="#BCB1B1"
+    tools:context=".RegisterActivity">
 
     <TextView
         android:id="@+id/register_1"
+        style="@style/textStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:elevation="50dp"
         android:gravity="center_horizontal"
         android:text="@string/register_title"
         android:textSize="32dp"
-        android:elevation="50dp"
         app:layout_constraintBottom_toTopOf="@+id/cardView"
         app:layout_constraintEnd_toEndOf="@+id/cardView"
         app:layout_constraintStart_toStartOf="@+id/cardView"
@@ -34,6 +34,7 @@
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:layout_marginBottom="8dp"
+        app:cardBackgroundColor="#A7D2D6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -46,11 +47,11 @@
             android:orientation="vertical"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:paddingBottom="20dp"
-            >
+            android:paddingBottom="20dp">
 
             <EditText
                 android:id="@+id/full_name"
+                style="@style/textStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
@@ -59,6 +60,7 @@
 
             <EditText
                 android:id="@+id/contact_no"
+                style="@style/textStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Contact Number "
@@ -66,21 +68,32 @@
 
             <EditText
                 android:id="@+id/register_email"
+                style="@style/textStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Email Address"
                 android:inputType="textEmailAddress" />
+
+            <TextView
+                style="@style/textStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Select Blood Group" />
 
             <Spinner
                 android:id="@+id/blood_group"
                 style="@style/spinnerStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#BAB4B4"
                 android:hint="Blood Group"
-                android:inputType="text" />
+                android:inputType="text"
+                android:prompt="@string/bloodGroupPrompt"
+                android:spinnerMode="dialog" />
 
             <EditText
                 android:id="@+id/address"
+                style="@style/textStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Address"
@@ -88,12 +101,41 @@
 
             <EditText
                 android:id="@+id/age"
+                style="@style/textStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Age"
                 android:inputType="numberSigned" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/register_submit"
+        android:elevation="10dp"
+        android:text="Register"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+    <Button
+        android:id="@+id/login_button1"
+        android:layout_width="74dp"
+        android:layout_height="49dp"
+        android:background="@drawable/register_login_submit"
+        android:padding="10dp"
+        android:text="Log In"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/cardView"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="@+id/cardView"
+        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintVertical_bias="0.218" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

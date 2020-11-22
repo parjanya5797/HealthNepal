@@ -47,9 +47,24 @@
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="185dp"
             android:layout_margin="8dp"
             android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/validation_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/et_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:ems="15"
+                android:hint="email"
+                android:rotationX="4" />
+
 
 
             <EditText
@@ -60,14 +75,6 @@
                 android:ems="15"
                 android:hint="password"
                 android:inputType="textPassword" />
-
-            <EditText
-                android:id="@+id/et_email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:ems="15"
-                android:hint="email" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

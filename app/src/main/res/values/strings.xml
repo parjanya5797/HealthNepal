@@ -11,4 +11,7 @@
         <item> AB RhD positive (AB+)</item>
         <item>AB RhD negative (AB-)</item>
     </string-array>
+    <string name="bloodGroupPrompt">
+        Choose Blood Group
+    </string>
 </resources>
