@@ -3,21 +3,49 @@ package com.example.healthnepal;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 public class RegisterActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     Button login_button;
     String[] blood_group = {"A","A+","A-","B+","B-","O+","0-","AB+","AB-"};
+
+    EditText email,password;
+
+    Button register_button;
+
+    SharedPreferences sharedPreferences;
+
+    SharedPreferences.Editor editor;
+
+    final String PREFERENCES_NAME ="user_email";
+    final String USER_EMAIL ="user_email";
+    final String USER_PASSWORD ="user_email";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        register_button = (Button) findViewById(R.id.register_button);
+        sharedPreferences = getSharedPreferences(PREFERENCES_NAME,MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+        email = (EditText) findViewById(R.id.register_email);
+        register_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String emailString = email.getText().toString();
+                editor.putString(USER_EMAIL,emailString);
+                editor.commit();
+            }
+        });
         Spinner spin = (Spinner) findViewById(R.id.blood_group);
         spin.setOnItemSelectedListener(this);
         ArrayAdapter spinBGroup = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,blood_group);
@@ -32,6 +60,8 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                 startActivity(intent);
             }
         });
+
+
 
     }
 

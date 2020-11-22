@@ -32,7 +32,7 @@
         <item name="cardBackgroundColor">#A7D2D6</item>
     </style>
     <style name="spinnerStyle">
-        <item name="android:background">#fff</item>
+        <item name="android:background">@drawable/spinner</item>
 
     </style>
     <style name="textStyle">

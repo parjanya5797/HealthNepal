@@ -3,6 +3,7 @@ package com.example.healthnepal;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +16,11 @@ public class LoginActivity extends AppCompatActivity {
     Button login;
     EditText email,password;
     TextView register,validation_text;
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
+    final String PREFERENCES_NAME ="user_data";
+    final String IS_LOGGED_IN ="Logged In";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +61,8 @@ public class LoginActivity extends AppCompatActivity {
                 else
                 {
                     Toast.makeText(LoginActivity.this,"Login Successful",Toast.LENGTH_LONG).show();
+                    editor.putBoolean(IS_LOGGED_IN,true);
+                    editor.commit();
                     Intent dashboardIntent = new Intent(LoginActivity.this,DashboardActivity.class);
                     startActivity(dashboardIntent);
                 }
