@@ -2,6 +2,8 @@ package com.example.healthnepal;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +13,7 @@ import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -21,8 +24,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class DashboardActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView textViewResult;
-
+//    private TextView textViewResult;
+    private RecyclerView mRecyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mlayoutManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,40 +35,64 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
 
 
         Toast.makeText(DashboardActivity.this, "Welcome to Dashboard", Toast.LENGTH_LONG).show();
-        RetrofitClass retrofitClass = RetrofitClass.getInstance();
-        textViewResult = findViewById(R.id.text_view_result);
-        FloatingActionButton logout = findViewById(R.id.logout_button);
+//        RetrofitClass retrofitClass = RetrofitClass.getInstance();
+//        textViewResult = findViewById(R.id.text_view_result);
+//        FloatingActionButton logout = findViewById(R.id.logout_button);
+//
+//        Call<List<Post>> call = retrofitClass.getJsonApi().getPosts();
+//        call.enqueue(new Callback<List<Post>>() {
+//            @Override
+//            public void onResponse(@NonNull Call<List<Post>> call, Response<List<Post>> response) {
+//
+//                if (!response.isSuccessful()) {
+//                    textViewResult.setText("Code:" + response.code());
+//                    return;
+//                }
+//
+//                List<Post> posts = response.body();
+//
+//                for (Post post : posts) {
+//                    String content = "";
+//                    content += "ID: " + post.getId() + "\n";
+//                    content += "User ID: " + post.getUserId() + "\n";
+//                    content += "Title: " + post.getTitle() + "\n";
+//                    content += "Text: " + post.getBody() + "\n";
+//
+//                    textViewResult.append(content);
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<List<Post>> call, Throwable t) {
+//                textViewResult.setText(t.getMessage());
+//            }
+//        });
+//
+//        logout.setOnClickListener(this);
+        ArrayList<ExampleItem> exampleList = new ArrayList<>();
+        exampleList.add(new ExampleItem(R.drawable.ic_android_phone,"Line1","Line2"));
+        exampleList.add(new ExampleItem(R.drawable.ic_three_dots,"Line3","Line4"));
+        exampleList.add(new ExampleItem(R.drawable.ic_room_service,"Line5","Line6"));
+        exampleList.add(new ExampleItem(R.drawable.ic_android_phone,"Line7","Line8"));
+        exampleList.add(new ExampleItem(R.drawable.ic_three_dots,"Line9","Line10"));
+        exampleList.add(new ExampleItem(R.drawable.ic_room_service,"Line11","Line12"));
+        exampleList.add(new ExampleItem(R.drawable.ic_android_phone,"Line13","Line14"));
+        exampleList.add(new ExampleItem(R.drawable.ic_three_dots,"Line15","Line16"));
+        exampleList.add(new ExampleItem(R.drawable.ic_room_service,"Line17","Line18"));
+        exampleList.add(new ExampleItem(R.drawable.ic_android_phone,"Line19","Line20"));
+        exampleList.add(new ExampleItem(R.drawable.ic_three_dots,"Line21","Line22"));
+        exampleList.add(new ExampleItem(R.drawable.ic_room_service,"Line23","Line24"));
+        exampleList.add(new ExampleItem(R.drawable.ic_android_phone,"Line25","Line26"));
+        exampleList.add(new ExampleItem(R.drawable.ic_three_dots,"Line27","Line28"));
+        exampleList.add(new ExampleItem(R.drawable.ic_room_service,"Line29","Line30"));
 
-        Call<List<Post>> call = retrofitClass.getJsonApi().getPosts();
-        call.enqueue(new Callback<List<Post>>() {
-            @Override
-            public void onResponse(@NonNull Call<List<Post>> call, Response<List<Post>> response) {
+        mRecyclerView = findViewById(R.id.recycler_view);
+        mRecyclerView.setHasFixedSize(true);
+        mlayoutManager = new LinearLayoutManager(this);
+        mAdapter = new ExampleAdapter(exampleList);
 
-                if (!response.isSuccessful()) {
-                    textViewResult.setText("Code:" + response.code());
-                    return;
-                }
-
-                List<Post> posts = response.body();
-
-                for (Post post : posts) {
-                    String content = "";
-                    content += "ID: " + post.getId() + "\n";
-                    content += "User ID: " + post.getUserId() + "\n";
-                    content += "Title: " + post.getTitle() + "\n";
-                    content += "Text: " + post.getBody() + "\n";
-
-                    textViewResult.append(content);
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<Post>> call, Throwable t) {
-                textViewResult.setText(t.getMessage());
-            }
-        });
-
-        logout.setOnClickListener(this);
+        mRecyclerView.setLayoutManager(mlayoutManager);
+        mRecyclerView.setAdapter(mAdapter);
     }
 
     @Override
