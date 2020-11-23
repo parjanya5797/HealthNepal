@@ -8,7 +8,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashActivity extends AppCompatActivity {
-    SharedPreferences sharedPreferences;
+   public static SharedPreferences sharedPreferences;
         final String PREFERENCES_NAME ="user_data";
         final String IS_LOGGED_IN ="Logged In";
         TextView tvHealth;

@@ -8,10 +8,9 @@ public class Post {
 
     private int userId;
 
-    @SerializedName("body")
     private String title;
 
-    private String text;
+    private String body;
 
     public int getId() {
         return id;
@@ -25,7 +24,7 @@ public class Post {
         return title;
     }
 
-    public String getText() {
-        return text;
+    public String getBody() {
+        return body;
     }
 }

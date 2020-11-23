@@ -43,7 +43,10 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
             public void onClick(View v) {
                 String emailString = email.getText().toString();
                 editor.putString(USER_EMAIL,emailString);
-                editor.commit();
+                editor.apply();
+                startActivity(new Intent(RegisterActivity.this,DashboardActivity.class));
+                RegisterActivity.this.finish();
+
             }
         });
         Spinner spin = (Spinner) findViewById(R.id.blood_group);
