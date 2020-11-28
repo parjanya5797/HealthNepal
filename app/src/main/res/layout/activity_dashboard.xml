@@ -54,8 +54,8 @@
 
         <EditText
             android:id="@+id/editText_insert"
-            android:layout_width="73dp"
-            android:layout_height="55dp"
+            android:layout_width="46dp"
+            android:layout_height="53dp"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:inputType="number"
