@@ -44,7 +44,7 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         Toast.makeText(DashboardActivity.this, "Welcome to Dashboard", Toast.LENGTH_LONG).show();
 //        RetrofitClass retrofitClass = RetrofitClass.getInstance();
 //        textViewResult = findViewById(R.id.text_view_result);
-//        FloatingActionButton logout = findViewById(R.id.logout_button);
+        FloatingActionButton logout = findViewById(R.id.logout_button);
 //
 //        Call<List<Post>> call = retrofitClass.getJsonApi().getPosts();
 //        call.enqueue(new Callback<List<Post>>() {
@@ -75,7 +75,7 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
 //            }
 //        });
 //
-//        logout.setOnClickListener(this);
+        logout.setOnClickListener(this);
 
         createExampleList();
         buildRecyclerView();
